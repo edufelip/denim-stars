@@ -1,11 +1,19 @@
-import React, { Component } from 'react'
+// import React, { Component } from 'react';
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
-export default class App extends Component {
-    render() {
-        return (
-            <div>
-                <h1>OPA</h1>
-            </div>
-        )
-    }
+import GlobalStyle from './styles/global';
+import Routes from './routes';
+import Header from './components/Header';
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Header />
+      <Routes />
+      <GlobalStyle />
+    </BrowserRouter>
+  );
 }
+
+export default App;
