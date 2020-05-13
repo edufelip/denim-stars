@@ -62,7 +62,7 @@ export const Trending = styled.div`
     display: block;
     width: fit-content;
     margin: 30px auto 0;
-    border-bottom: 1px solid #00000030;
+    border-bottom: 1px solid #00000020;
     padding: 4px 35px;
   }
   a {
@@ -70,9 +70,10 @@ export const Trending = styled.div`
     width: 200px;
     height: 45px;
     background-color: #24375b;
-    margin: 20px auto 0;
+    margin: 40px auto 0;
     color: white;
-    font-size: 20px;
+    font-size: 18px;
+    letter-spacing: 2px;
     justify-content: center;
     align-items: center;
     text-decoration: none;
@@ -92,6 +93,7 @@ export const ProductList = styled.ul`
     background: #fff;
     border-radius: 4px;
     padding: 20px;
+    box-shadow: 1px 1px 12px 1px #00000035;
     img {
       align-self: center;
       max-width: 250px;
@@ -108,7 +110,6 @@ export const ProductList = styled.ul`
       font-weight: bold;
       margin: 5px 0 20px 0;
     }
-
     button {
       background: #7c9ed9;
       color: white;
@@ -121,7 +122,7 @@ export const ProductList = styled.ul`
       align-items: center;
       transition: background 0.3s ease;
       &:hover {
-        background: ${darken(0.04, '#7c9ed9')};
+        background: ${darken(0.05, '#7c9ed9')};
       }
       div {
         display: flex;
@@ -146,8 +147,8 @@ export const Promotion = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 88%;
-  margin: 40px auto 0;
+  width: 90%;
+  margin: 40px auto;
   background-color: #d48276;
   padding: 20px 0;
   p {

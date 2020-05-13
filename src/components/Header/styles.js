@@ -19,7 +19,7 @@ export const Logo = styled.div`
     img {
       display: block;
       width: 200px;
-      margin: 20px auto 0 auto;
+      margin: 30px auto 0 auto;
     }
   }
 `;

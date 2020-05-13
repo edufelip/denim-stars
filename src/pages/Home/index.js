@@ -23,7 +23,7 @@ export default function Home() {
         <Trending />
       </Container>
       <Trending>
-        <p>SEE WHAT'S TRENDING</p>
+        <p>SEE WHAT&apos;S TRENDING</p>
         <ProductList>
           <li>
             <img
@@ -85,7 +85,7 @@ export default function Home() {
         <Link to="/">SEE MORE</Link>
       </Trending>
       <Promotion>
-        <p>Join us, get 15% off our first purchase</p>
+        <p>Join us, get 15% off your first purchase</p>
         <p className="sub">Plus, member exclusives are around the corner</p>
       </Promotion>
     </WholeMain>
