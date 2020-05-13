@@ -26,7 +26,8 @@ export const Logo = styled.div`
 
 export const NavBar = styled.div`
   display: flex;
-  width: 70%;
+  width: 60%;
+  min-width: 660px;
   margin: 30px auto 0;
   justify-content: space-around;
   align-items: flex-end;
@@ -77,15 +78,21 @@ export const Profile = styled.div`
     align-items: center;
     margin: 0 10px 0 0;
     input {
+      width: 200px;
       margin: 0 5px 0 0;
       background-color: transparent;
       border: 1px solid #00000030;
       border-radius: 5px;
       padding: 3px 6px;
       font-size: 13px;
-      width: 200px;
+      opacity: 0.6;
+      transition: opacity 0.3s ease;
+      &:focus {
+        opacity: 1;
+      }
     }
     button {
+      margin: 5px 0 0 0;
       background-color: transparent;
       border: 0;
     }
