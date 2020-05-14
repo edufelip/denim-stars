@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { FiShoppingCart, FiUser, FiSearch } from 'react-icons/fi';
+import { FiUser, FiSearch } from 'react-icons/fi';
+import { TiShoppingCart } from 'react-icons/ti';
 import { Container, Cart, Logo, NavBar, Profile, ImgContainer } from './styles';
 
 import logoImg from '../../assets/images/Logo.svg';
@@ -39,7 +40,7 @@ function Header({ cart }) {
             <strong>My Cart</strong>
             <span>{cartNumber}</span>
           </div>
-          <FiShoppingCart size={36} color="#2e2e2e" />
+          <TiShoppingCart size={36} color="#2e2e2e" />
         </Cart>
       </NavBar>
     </Container>

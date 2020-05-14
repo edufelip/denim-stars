@@ -29,13 +29,14 @@ class Home extends Component {
     this.setState({ products: response.data });
   }
 
-  handleAdd = (product) => {
+  handleAdd = (id) => {
     const { addProduct } = this.props;
-    addProduct(product);
+    addProduct(id);
   };
 
   render() {
     const { products } = this.state;
+    const { amount } = this.props;
     return (
       <WholeMain>
         <Container>
@@ -54,9 +55,13 @@ class Home extends Component {
                 <img src={product.image} alt={product.title} />
                 <strong>{product.title}</strong>
                 <span>${product.price.replace('.', ',')}</span>
-                <button type="button" onClick={() => this.handleAdd(product)}>
+                <button
+                  type="button"
+                  onClick={() => this.handleAdd(product.id)}
+                >
                   <div>
-                    <MdAddShoppingCart size={16} />3
+                    <MdAddShoppingCart size={16} />
+                    {amount[product.id] || 0}
                   </div>
                   <span>ADD TO CART</span>
                 </button>
@@ -74,16 +79,17 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    cart: state.cart,
-  };
-};
+const mapStateToProps = (state) => ({
+  amount: state.cart.reduce((amount, product) => {
+    amount[product.id] = product.amount;
+    return amount;
+  }, {}),
+});
 
 const mapDispatchToProps = (dispatch) => {
   return {
     addProduct: (product) => {
-      dispatch(CartActions.addToCart(product));
+      dispatch(CartActions.addToCartRequest(product));
     },
   };
 };
