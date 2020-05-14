@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const Container = styled.header`
   align-items: center;
+  margin-bottom: 15px;
 `;
 
 export const ImgContainer = styled.div`

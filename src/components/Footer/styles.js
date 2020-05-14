@@ -53,7 +53,7 @@ export const Social = styled.div`
     width: 130px;
   }
   .agroup {
-    margin: 5px 0 30px 10px;
+    margin: 5px 0 30px 20px;
     * {
       margin: 0 10px 0 0;
     }

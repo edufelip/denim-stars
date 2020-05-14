@@ -1,0 +1,98 @@
+import styled from 'styled-components';
+
+import { darken } from 'polished';
+
+export const CartBody = styled.div`
+  background: #fff;
+`;
+
+export const Container = styled.div`
+  padding: 30px;
+  border-radius: 4px;
+  width: 60%;
+  min-width: 300px;
+  height: fit-content;
+  margin: 20px auto 0;
+  footer {
+    margin: 30px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+      background: #7159c1;
+      color: #fff;
+      border: 0;
+      border-radius: 4px;
+      padding: 12px 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: background 0.2s ease;
+      &:hover {
+        background: ${darken(0.04, '#7159c1')};
+      }
+    }
+  }
+`;
+
+export const ProductTable = styled.div`
+  width: 100%;
+  height: fit-content;
+  margin: 0 auto;
+  thead th {
+    color: #999;
+    text-align: left;
+    padding: 12px;
+  }
+  tbody td {
+    padding: 12px;
+    vertical-align: middle;
+    border-bottom: 1px solid #eee;
+  }
+
+  img {
+    height: 100px;
+  }
+
+  strong {
+    color: #333;
+    display: block;
+  }
+
+  span {
+    display: block;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    input {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      color: #666;
+      padding: 6px;
+      width: 50px;
+    }
+  }
+
+  button {
+    background: none;
+    border: 0;
+    padding: 6px;
+  }
+`;
+export const Total = styled.div`
+  display: flex;
+  align-items: baseline;
+  span {
+    color: #999;
+    font-weight: bold;
+  }
+
+  strong {
+    font-size: 24px;
+    margin-left: 5px;
+  }
+`;

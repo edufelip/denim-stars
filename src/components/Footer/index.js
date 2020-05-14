@@ -29,11 +29,21 @@ export default function Footer() {
       <Social>
         <p>Our Social Medias</p>
         <div className="agroup">
-          <AiFillFacebook size={32} />
-          <AiOutlineInstagram size={32} />
-          <AiFillTwitterCircle size={32} />
-          <AiFillYoutube size={32} />
-          <FaPinterest size={32} />
+          <Link to="/">
+            <AiFillFacebook size={32} />
+          </Link>
+          <Link to="/">
+            <AiOutlineInstagram size={32} />
+          </Link>
+          <Link to="/">
+            <AiFillTwitterCircle size={32} />
+          </Link>
+          <Link to="/">
+            <AiFillYoutube size={32} />
+          </Link>
+          <Link to="/">
+            <FaPinterest size={32} />
+          </Link>
         </div>
         <img src={Logo} alt="" />
       </Social>

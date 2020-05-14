@@ -1,11 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { FiShoppingCart, FiUser, FiSearch } from 'react-icons/fi';
 import { Container, Cart, Logo, NavBar, Profile, ImgContainer } from './styles';
 
 import logoImg from '../../assets/images/Logo.svg';
 
-export default function Header() {
+function Header({ cart }) {
+  const cartNumber = cart.length === 1 ? '1 item' : `${cart.length} items`;
+
   return (
     <Container>
       <Logo>
@@ -34,7 +37,7 @@ export default function Header() {
         <Cart to="/cart">
           <div>
             <strong>My Cart</strong>
-            <span>1 item</span>
+            <span>{cartNumber}</span>
           </div>
           <FiShoppingCart size={36} color="#2e2e2e" />
         </Cart>
@@ -42,3 +45,19 @@ export default function Header() {
     </Container>
   );
 }
+
+const mapStateToProps = (state) => {
+  return {
+    cart: state.cart,
+  };
+};
+
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     addPost: (post) => {
+//       dispatch(addPost(post));
+//     },
+//   };
+// };
+
+export default connect(mapStateToProps)(Header);

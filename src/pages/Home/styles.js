@@ -9,7 +9,7 @@ export const Container = styled.div`
   height: 80vh;
   width: 100%;
   min-height: 500px;
-  margin: 15px auto 0;
+  margin: 0 auto;
   background-image: url(${BackgroundImage});
   background-repeat: no-repeat;
   background-position: center;
@@ -52,6 +52,10 @@ export const MainBackground = styled.div`
     font-weight: 500;
     letter-spacing: 3px;
     margin: 40px 0 0 0;
+    transition: background 0.3s ease;
+    &:hover {
+      background: ${darken(0.06, '#d2d2d2')};
+    }
   }
 `;
 
@@ -96,9 +100,8 @@ export const ProductList = styled.ul`
     box-shadow: 1px 1px 12px 1px #00000035;
     img {
       align-self: center;
-      max-width: 250px;
+      height: 240px;
     }
-
     > strong {
       font-size: 16px;
       line-height: 20px;
