@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   MdRemoveCircleOutline,
   MdAddCircleOutline,
@@ -9,12 +9,31 @@ import { CartBody, Container, ProductTable, Total } from './styles';
 
 import * as CartActions from '../../store/modules/cart/actions';
 
-function Cart({ cart, removeProduct, updateAmount, total }) {
+export default function Cart() {
+  const dispatch = useDispatch();
+  const cart = useSelector((state) =>
+    state.cart.map((product) => ({
+      ...product,
+      subtotal: (parseFloat(product.price) * product.amount)
+        .toFixed(2)
+        .toString()
+        .replace('.', ','),
+    }))
+  );
+  const total = useSelector((state) =>
+    state.cart
+      .reduce((totalSum, product) => {
+        return totalSum + parseFloat(product.price) * product.amount;
+      }, 0)
+      .toFixed(2)
+      .toString()
+      .replace('.', ',')
+  );
   function increment(product) {
-    updateAmount(product.id, product.amount + 1);
+    dispatch(CartActions.updateAmountRequest(product.id, product.amount + 1));
   }
   function decrement(product) {
-    updateAmount(product.id, product.amount - 1);
+    dispatch(CartActions.updateAmountRequest(product.id, product.amount - 1));
   }
 
   return (
@@ -57,7 +76,9 @@ function Cart({ cart, removeProduct, updateAmount, total }) {
                 <td>
                   <button
                     type="button"
-                    onClick={() => removeProduct(product.id)}
+                    onClick={() =>
+                      dispatch(CartActions.removeFromCart(product.id))
+                    }
                   >
                     <MdDelete size={20} />
                   </button>
@@ -77,35 +98,3 @@ function Cart({ cart, removeProduct, updateAmount, total }) {
     </CartBody>
   );
 }
-
-const mapStateToProps = (state) => {
-  return {
-    cart: state.cart.map((product) => ({
-      ...product,
-      subtotal: (parseFloat(product.price) * product.amount)
-        .toFixed(2)
-        .toString()
-        .replace('.', ','),
-    })),
-    total: state.cart
-      .reduce((total, product) => {
-        return total + parseFloat(product.price) * product.amount;
-      }, 0)
-      .toFixed(2)
-      .toString()
-      .replace('.', ','),
-  };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    removeProduct: (id) => {
-      dispatch(CartActions.removeFromCart(id));
-    },
-    updateAmount: (id, amount) => {
-      dispatch(CartActions.updateAmount(id, amount));
-    },
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Cart);

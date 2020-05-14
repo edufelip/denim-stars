@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { FiUser, FiSearch } from 'react-icons/fi';
 import { TiShoppingCart } from 'react-icons/ti';
 import { Container, Cart, Logo, NavBar, Profile, ImgContainer } from './styles';
 
 import logoImg from '../../assets/images/Logo.svg';
 
-function Header({ cart }) {
+export default function Header() {
+  const cart = useSelector((state) => state.cart);
   const cartNumber = cart.length === 1 ? '1 item' : `${cart.length} items`;
-
   return (
     <Container>
       <Logo>
@@ -46,19 +46,3 @@ function Header({ cart }) {
     </Container>
   );
 }
-
-const mapStateToProps = (state) => {
-  return {
-    cart: state.cart,
-  };
-};
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     addPost: (post) => {
-//       dispatch(addPost(post));
-//     },
-//   };
-// };
-
-export default connect(mapStateToProps)(Header);
