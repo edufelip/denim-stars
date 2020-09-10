@@ -29,7 +29,7 @@ function Home() {
 
   useEffect(() => {
     async function loadProducts() {
-      const response = await api.get('products&_limit=4');
+      const response = await api.get('products?_limit=4');
       setProducts(response.data);
     }
     loadProducts();

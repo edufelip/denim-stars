@@ -1,5 +1,5 @@
-import { craeteBrowserHistory } from 'history';
+import { createBrowserHistory } from 'history';
 
-const history = craeteBrowserHistory();
+const history = createBrowserHistory();
 
 export default history;
