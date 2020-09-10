@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { MdAddShoppingCart } from 'react-icons/md';
 
-import * as CartActions from '../../store/modules/cart/actions';
+import * as CartActions from '~/store/modules/cart/actions';
 
 import {
   WholeMain,
@@ -14,7 +14,7 @@ import {
   ProductList,
 } from './styles';
 
-import api from '../../services/api';
+import api from '~/services/api';
 
 function Home() {
   const dispatch = useDispatch();

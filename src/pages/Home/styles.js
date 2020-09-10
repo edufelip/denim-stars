@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
 
-import BackgroundImage from '../../assets/images/Main-Bg.svg';
+import BackgroundImage from '~/assets/images/Main-Bg.svg';
 
 export const WholeMain = styled.div``;
 

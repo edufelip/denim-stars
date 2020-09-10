@@ -7,7 +7,7 @@ import {
 } from 'react-icons/md';
 import { CartBody, Container, ProductTable, Total } from './styles';
 
-import * as CartActions from '../../store/modules/cart/actions';
+import * as CartActions from '~/store/modules/cart/actions';
 
 export default function Cart() {
   const dispatch = useDispatch();
