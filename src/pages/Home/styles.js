@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import { darken } from 'polished';
+import { darken, lighten } from 'polished';
 
 import BackgroundImage from '~/assets/images/Main-Bg.svg';
+import SelectArrowImg from '~/assets/images/ico-seta-appearance.gif';
 
 export const WholeMain = styled.div``;
 
@@ -102,16 +103,23 @@ export const ProductList = styled.ul`
       align-self: center;
       height: 240px;
     }
-    > strong {
-      font-size: 16px;
-      line-height: 20px;
-      color: #333;
-      margin: 5px 0 0 0;
-    }
-    > span {
-      font-size: 21px;
-      font-weight: bold;
-      margin: 5px 0 20px 0;
+    .container {
+      width: 100%;
+      height: 80px;
+      > strong {
+        display: block;
+        width: 100%px;
+        font-size: 16px;
+        line-height: 20px;
+        color: #333;
+        margin: 5px 0 0 0;
+      }
+      > span {
+        width: 100%;
+        font-size: 21px;
+        font-weight: bold;
+        margin: 5px 0 10px 0;
+      }
     }
     button {
       background: #7c9ed9;
@@ -120,7 +128,6 @@ export const ProductList = styled.ul`
       border-radius: 4px;
       overflow: hidden;
       margin-top: auto;
-
       display: flex;
       align-items: center;
       transition: background 0.3s ease;
@@ -142,7 +149,32 @@ export const ProductList = styled.ul`
         font-weight: bold;
       }
     }
+    label {
+      margin-top: auto;
+      color: ${lighten(0.35, '#000')};
+      select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: url(${SelectArrowImg}) no-repeat #eeeeee;
+        background-position: 158px center;
+        width: 190px;
+        height: 30px;
+        border: 1px solid #ddd;
+        margin: 2px 0 10px 0;
+        padding-left: 5px;
+        color: ${lighten(0.25, '#000')};
+      }
+      span {
+      }
+    }
   }
+`;
+
+export const Status = styled.span`
+  width: fit-content;
+  display: ${(props) => (props.stock ? 'none' : 'inline-block')};
+  color: ${darken(0.16, 'red')};
 `;
 
 export const Promotion = styled.div`

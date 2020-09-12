@@ -34,7 +34,7 @@ export const Container = styled.div`
   }
 `;
 
-export const ProductTable = styled.div`
+export const ProductTable = styled.table`
   width: 100%;
   height: fit-content;
   margin: 0 auto;
