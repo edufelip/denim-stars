@@ -68,6 +68,7 @@
     "node-forge": "^0.10.0",
     "lodash": "^4.17.19",
     "yargs-parser": "^18.1.2",
-    "minimist": "^1.2.3"
+    "minimist": "^1.2.3",
+    "object-path": "^0.11.5"
   }
 }
